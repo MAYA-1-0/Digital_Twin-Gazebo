@@ -1,0 +1,69 @@
+<?xml version='1.0'?>
+
+<robot name="maya" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find MAYA_BASE)/urdf/rim.xacro"/>
+  <xacro:include filename="$(find MAYA_BASE)/urdf/plugins.gazebo"/>
+  <link name="world_frame"/>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+      <mass value="0.0112103535391" />
+      <inertia ixx="0.273656740772269"
+        ixy="0.000115324299491706"
+        ixz="-2.05652855875297E-05"
+        iyy="0.145988526797534"
+        iyz="0.00468981370233137"
+        izz="0.332564607577311" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://MAYA_BASE/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="255 255 255 0.24" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://MAYA_BASE/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+ <joint name="world_base_joint" type="fixed">
+   <parent link = "world_frame"/>
+    <child link = "base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+
+<!--rear wheel-->
+ <xacro:rim name="left" parent="base_link" xyz="0.352708369599926 -1.0849715988456 0.158609030813292" rpy="-1.5707963267949 -0.643727856982557 3.14159265358979"  GAZEBO_color = "Gazebo/Black"/>
+
+<!--left wheel-->
+  <xacro:rim name="right" parent="base_link" xyz="0.465480449082314 -1.26685823647147 0.158609030813292" rpy="1.57079632679489 -0.35012305570742 -2.09439510239319" GAZEBO_color = "Gazebo/Black"/>
+
+<!--right wheel-->
+  <xacro:rim name="front" parent="base_link" xyz="0.249229494265412 -1.28190732139834 0.158609030813292" rpy="1.57079632679489 -1.25276450199052 2.0943951023932" GAZEBO_color = "Gazebo/Black"/>
+</robot>
+ <!-- Laser -->
+ <!--link name = "laser">
+    <visual>
+      <origin xyz="0 0 0.1" rpy="0 0 0" />
+      <geometry>
+          <cylinder length="0.1" radius="0.01" />
+      </geometry>
+      <material name="darkgray">
+        <color rgba=".2 .2 .2 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="laser_joint" type="fixed">
+    <parent link = "base_link"/>
+    <child link = "laser"/>
+    <origin xyz="0 0 0.5" rpy="0 0 0"/>
+  </joint-->
+
+

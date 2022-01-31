@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="MAYA_BASE">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.342829462534096 0.798509553467405 1.25184600527758" rpy="0 0 0" />
+      <mass value="17.0112103535391" />
+      <inertia
+        ixx="0.273656740772269"
+        ixy="0.000115324299491706"
+        ixz="-2.05652855875297E-05"
+        iyy="0.145988526797534"
+        iyz="0.00468981370233137"
+        izz="0.332564607577311" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MAYA_BASE/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MAYA_BASE/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="w1">
+    <inertial>
+      <origin
+        xyz="-0.000305151878838783 0.00173175352544974 -0.0200215287628904"
+        rpy="0 0 0" />
+      <mass
+        value="0.209269396052415" />
+      <inertia
+        ixx="5.00543192169671E-05"
+        ixy="-7.41472579941199E-09"
+        ixz="8.81626585971795E-14"
+        iyy="5.01027550823703E-05"
+        iyz="3.44017418786352E-13"
+        izz="9.27168366951345E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MAYA_BASE/meshes/w1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MAYA_BASE/meshes/w1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="q1"
+    type="continuous">
+    <origin
+      xyz="0.249229494265412 -1.28190732139834 0.158609030813292"
+      rpy="1.57079632679489 -1.25276450199052 2.0943951023932" />
+    <parent
+      link="base_link" />
+    <child
+      link="w1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="w2">
+    <inertial>
+      <origin
+        xyz="-0.000305151840763851 0.00173175351778157 -0.0901196987748394"
+        rpy="0 0 0" />
+      <mass
+        value="0.209269394929712" />
+      <inertia
+        ixx="5.00543190860832E-05"
+        ixy="-7.41470855711783E-09"
+        ixz="3.45196842708702E-14"
+        iyy="5.01027549438184E-05"
+        iyz="3.99108362478191E-13"
+        izz="9.27168367165807E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MAYA_BASE/meshes/w2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MAYA_BASE/meshes/w2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="q2"
+    type="continuous">
+    <origin
+      xyz="0.375480449082314 -1.24685823647147 0.158609030813292"
+      rpy="1.57079632679489 -0.35012305570742 -2.09439510239319" />
+    <parent
+      link="base_link" />
+    <child
+      link="w2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="w3">
+    <inertial>
+      <origin
+        xyz="-0.000305151838472767 0.0017317535914142 0.0234784713873206"
+        rpy="0 0 0" />
+      <mass
+        value="0.209269397005923" />
+      <inertia
+        ixx="5.00543193930365E-05"
+        ixy="-7.41473511448318E-09"
+        ixz="4.48813024030456E-14"
+        iyy="5.0102755158197E-05"
+        iyz="1.90869124981301E-13"
+        izz="9.2716836767049E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MAYA_BASE/meshes/w3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://MAYA_BASE/meshes/w3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="q3"
+    type="continuous">
+    <origin
+      xyz="0.342708369599926 -1.07849715988456 0.158609030813292"
+      rpy="-1.5707963267949 -0.643727856982557 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="w3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
