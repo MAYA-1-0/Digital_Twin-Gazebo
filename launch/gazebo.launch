@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<launch>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+
+    <arg name="x" default="0.0"/>
+    <arg name="y" default="0.0"/>
+    <arg name="z" default="0.2"/>
+    <arg name="yaw" default="0.0" />
+
+    <arg name="use_sim_time" default="true" />
+    <arg name="gui" default="true" />
+    <arg name="headless" default="false" />
+  
+
+  <param name="robot_description" command="$(find xacro)/xacro $(find MAYA_BASE)/urdf/main.xacro"/>
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model"
+    args="-param robot_description -urdf -model wheel" output="screen"/>
+
+  <rosparam file="$(find MAYA_BASE)/config/maya_assembly.yaml" command="load"/>
+  <node name="control_spawn" pkg="controller_manager" type="spawner" respawn="false" ns="maya"
+    output="screen" args="
+      joint_state_controller 
+      left_wheel_controller 
+      right_wheel_controller 
+      front_wheel_controller"/>
+  <node name="robot_state_publisher" ns="maya" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <remap from="/joint_states" to="/maya/joint_states"/>
+  </node>
+</launch>
