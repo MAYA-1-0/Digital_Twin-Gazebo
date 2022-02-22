@@ -33,7 +33,7 @@ For Simulating in real time, subscribe to Topic base/goal from the navigation st
 
 ![Rqt Graph representing URDF Joints](https://github.com/MAYA-1-0/Digital_Twin-Gazebo/blob/main/images/Screenshot%20from%202022-02-22%2021-54-35.png)
 
-![Controller Nodes for Simulation]()
+![Controller Nodes for Simulation](https://github.com/MAYA-1-0/Digital_Twin-Gazebo/blob/main/images/Screenshot%20from%202022-02-22%2021-54-55.png)
 ![Gazeo world Model]()
 
 
