@@ -28,3 +28,11 @@ roslaunch MAYA_BASE gazebo.launch
 ![Imported URDF Model in Gazebo](https://github.com/MAYA-1-0/Digital_Twin-Gazebo/blob/main/images/Screenshot%20from%202022-02-17%2020-27-57.png)
 ![Imported URDF Model in Gazebo](https://github.com/MAYA-1-0/Digital_Twin-Gazebo/blob/main/images/Screenshot%20from%202022-02-17%2020-28-05.png)
 
+
+For Simulating in real time, subscribe to Topic base/goal from the navigation stack and same is published to respective 3 wheel topics /maya/wheel_controller/command in gazebo
+
+
+
+
+
+
