@@ -8,7 +8,8 @@ Gazebo provides plugins for differential drive based but as an holonomic wheel b
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
-### Usage
+### Usage and System Requirements
+Requires ROS Melodic (Along with Gazebo and other necessary tools) , Python2 installed in Ubuntu(18.04) System 
 1. Clone this repo into "src" of you ROS catkin workspace.
 2. Rename the package name to MAYA_BASE (the package was built with this name).
 3. cd to workspace and run catkin_make
