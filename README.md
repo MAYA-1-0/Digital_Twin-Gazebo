@@ -31,6 +31,14 @@ roslaunch MAYA_BASE gazebo.launch
 
 For Simulating in real time, subscribe to Topic base/goal from the navigation stack and same is published to respective 3 wheel topics /maya/wheel_controller/command in gazebo
 
+![Rqt Graph representing URDF Joints](https://github.com/MAYA-1-0/Digital_Twin-Gazebo/blob/main/images/Screenshot%20from%202022-02-22%2021-54-35.png)
+
+![Controller Nodes for Simulation]()
+![Gazeo world Model]()
+
+
+
+
 
 
 
