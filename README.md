@@ -21,6 +21,27 @@ Once the workspace is ready,
 roslaunch MAYA_BASE gazebo.launch
 ```
 
+2. Below will list all the controller topics running
+```
+rostopic list
+```
+![img](https://github.com/MAYA-1-0/Digital_Twin-Gazebo/blob/main/images/Screenshot%20from%202022-02-25%2018-38-14.png)
+
+
+3. To move the Robot, command velocities can be published to topics directly
+```
+rostopic pub maya/<controller_name_here>/command std_msgs/Float64 "data: 0.0"
+```
+
+4. teleop.py scripts can also be used to control the robot from keyboard.
+```
+rosrun MAYA_BASE teleop.py
+```
+
+5. For running the digital Twin run the below script after getting [kinematics](https://github.com/MAYA-1-0/KInematics_And_Odometry) started.
+```
+rosrun MAYA_BASE digital_twin.py 
+```
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------
